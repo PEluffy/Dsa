@@ -1,4 +1,4 @@
-package dsa;
+package binarySearch;
 public class binarySearch {
     int[] arr;
     int searchValue;
