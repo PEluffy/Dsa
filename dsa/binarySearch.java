@@ -7,8 +7,9 @@ public class binarySearch {
         this.arr = arr;
         this.searchValue = searchValue; 
     }
-  
+
     public int performBinarysearch(){
+
         int start=0;
         int end=arr.length-1;
          while (start<=end){
