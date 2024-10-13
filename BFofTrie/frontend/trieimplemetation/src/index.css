@@ -18,3 +18,7 @@
 .searchlabel {
   font-size: 18px;
 }
+.seperatedByConcern {
+  display: flex;
+  flex-direction: column;
+}

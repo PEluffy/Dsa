@@ -3,6 +3,8 @@ import { Inputbox } from "./Components/Inputbox";
 import { InsertName } from "./Components/InsertName";
 
 function App() {
+  const [prefix, setprefix] = useState("");
+  const [searchedValue, setSearchedValue] = useState([]);
   const userAlert = {
     color: "red",
     fontFamily: "Arial",
@@ -47,17 +49,30 @@ function App() {
           "Content-Type": "application/json",
         },
       });
-      const data = await response.text();
+      const data = await response.json();
       console.log("Success:", data);
+      setSearchedValue(data);
     } catch (error) {
       console.error("Error:", error);
     }
   }
+  function handlepreChange(prefix) {
+    setprefix(prefix);
+    Getdata(prefix);
+  }
   return (
     <div className="App">
+      <div>
+        <span style={userAlert}> NOTE: </span>This is build with the
+        implementation of trie data structure on java😍💕
+      </div>
       <div style={userAlert}>Please insert some name before searching for</div>
       <div className="container">
-        <Inputbox />
+        <Inputbox
+          handlepreChange={handlepreChange}
+          prefix={prefix}
+          searchedValue={searchedValue}
+        />
         <InsertName handleNameSubmit={handleNameSubmit} />
       </div>
       <div style={userSecondaryAlert}>
