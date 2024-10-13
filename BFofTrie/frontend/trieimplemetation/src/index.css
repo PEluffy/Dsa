@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  justify-content: space-around;
+  height: 80vh;
+}
+.searchboxcontainer {
+  background-color: aqua;
+}
+.insertboxcontainer {
+  background-color: rgb(71, 105, 135);
+  align-content: center;
+}
+.searchlabel {
+  font-size: 18px;
+}
